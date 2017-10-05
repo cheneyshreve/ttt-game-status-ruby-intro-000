@@ -63,6 +63,11 @@ end
 def winner(board)
 
  array_index = won?(board)
+
+ if array_index == nil
+   return nil
+ end
+ 
  letters = []
  array_index.each{|index| letters << board[index] }
  if letters.all?{|letter| letter == "X"}

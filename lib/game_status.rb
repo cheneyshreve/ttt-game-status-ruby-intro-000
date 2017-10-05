@@ -63,14 +63,15 @@ end
 def winner(board)
 
  array_index = won?(board)
-
- letters_index = []
- array_index.each{|number| board[number] << letters_index}
- if letters_index.all?{|letters| letters == "X"}
-     return "X"
- elsif letters_index.all?{|letters| letters == "O"}
-     return "O"  
- end    
-
+ letters = []
+ array_index.each{|index| letters << board[index] }
+ if letters.all?{|letter| letter == "X"}
+   return "X"
+ elsif letters.all?{|letter| letter == "O"}
+   return "O"
+ elsif letters.all?{|letter| letter != "X" || letter != "O"}
+   return nil
+ end
+   
 end
 

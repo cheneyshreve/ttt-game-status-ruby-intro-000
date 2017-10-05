@@ -70,7 +70,7 @@ def winner(board)
  elsif letters.all?{|letter| letter == "O"}
    return "O"
  else
-   return "nil"
+   return nil
  end
 end
 
